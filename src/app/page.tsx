@@ -2,17 +2,19 @@
 
 import Nav from "@/components/created/Nav";
 import Home from "@/components/created/Home";
-import { useTheme } from "next-themes";
 import Experience from "@/components/created/Experience";
+import Project from "@/components/created/Project";
+import { useTheme } from "next-themes";
 
 export default function App() {
   const { setTheme } = useTheme();
-  setTheme("light");
+  setTheme("dark");
   return (
     <main>
       <Nav />
       <Home/>
       <Experience/>
+      <Project/>
     </main>
   );
 }

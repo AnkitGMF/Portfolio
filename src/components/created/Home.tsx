@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="w-full flex flex-col justify-center align-middle lg:mt-36 mt-24 lg:px-36 md:px-24 px-8">
       <div className="grid max-lg:grid-cols-1 grid-cols-2 w-full">
-        <div className="w-full text-center lg:text-left">
+        <div className="w-full">
           <h4 className="text-code text-xl font-bold font-mono animate-pulse">
             👋<TypeIt> Hi There! This is</TypeIt>
           </h4>
@@ -19,7 +19,7 @@ const Home = () => {
             I am a{" "}
             <span className="bg-accent px-2 m-1 rounded-lg">Developer.</span>
           </h1>
-          <p className="text-muted-foreground lg:text-left sm:text-center mt-8 lg:mt-4">
+          <p className="text-muted-foreground mt-8 lg:mt-4">
             {about}
           </p>
           <Button className=" mt-24 lg:block hidden rounded-full">
