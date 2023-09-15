@@ -13,16 +13,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from "@/components/ui/command";
 import { Button } from "../ui/button";
 import { navLinks } from "@/constants";
 
@@ -51,7 +41,7 @@ const Nav = () => {
               <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
             </svg>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-secondary pt-12">
+          <SheetContent side="top" className="pt-12">
             <div>
               <ul>
                 {navLinks.map((link) => {
@@ -67,9 +57,7 @@ const Nav = () => {
               </ul>
             </div>
             <SheetFooter>
-              <Button  className="border-code mt-2 w-full">
-                Resume
-              </Button>
+              <Button className="border-code mt-2 w-full">Resume</Button>
             </SheetFooter>
           </SheetContent>
         </Sheet>

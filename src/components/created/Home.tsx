@@ -19,7 +19,7 @@ const Home = () => {
             I am a{" "}
             <span className="bg-accent px-2 m-1 rounded-lg">Developer.</span>
           </h1>
-          <p className="text-muted-foreground text-left mt-8 lg:mt-4">
+          <p className="text-muted-foreground lg:text-left sm:text-center mt-8 lg:mt-4">
             {about}
           </p>
           <Button className=" mt-24 lg:block hidden rounded-full">
@@ -27,15 +27,15 @@ const Home = () => {
           </Button>
         </div>
         <div className="w-full flex justify-center mt-12 lg:mt-0">
-          <Avatar className="lg:w-86 lg:h-86 w-72 h-72">
+          <Avatar className="w-52 h-52 lg:w-80 lg:h-80 md:w-64 md:h-64">
             <AvatarImage src="/avatar.png" alt="@shadcn" />
             <AvatarFallback>Avatar</AvatarFallback>
           </Avatar>
         </div>
       </div>
-      <div className="flex justify-center mt-12 lg:mt-24 xl:mt-36">
+      <div className="flex justify-center mt-12 lg:mt-24 xl:mt-30">
         <svg
-          className="animate-bounce"
+          className="animate-bounce max-lg:hidden block"
           width="50"
           height="50"
           xmlns="http://www.w3.org/2000/svg"

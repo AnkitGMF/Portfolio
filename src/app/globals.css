@@ -74,3 +74,23 @@
     @apply bg-background text-foreground;
   }
 }
+@layer utilities {
+  @variants responsive {
+      .masonry {
+          row-gap: 1.5em;
+          row-count: 1;
+      }
+      .masonry-sm {
+          row-gap: 1.5em;
+          row-count: 2;
+      }
+      .masonry-md {
+          row-gap: 1.5em;
+          row-count: 3;
+      }
+      .break-inside {
+          break-inside: avoid;
+      }
+
+  }
+}
