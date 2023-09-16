@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const Experience = () => {
   return (
-    <div className="w-full flex flex-col justify-center align-middle lg:mt-36 mt-24 lg:px-36 md:px-24 px-8 py-24">
+    <div id="experience" className="w-full flex flex-col justify-center align-middle lg:mt-36 mt-24 lg:px-36 md:px-24 px-8 py-24">
       <div className="grid max-lg:grid-cols-1 grid-cols-2 w-full gap-16">
         <div>
           <h1 className="text-4xl lg:text-5xl font-extrabold lg:text-center">Experience</h1>

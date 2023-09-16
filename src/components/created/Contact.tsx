@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 
 const Contact = () => {
   return (
-    <div className='w-full flex flex-col justify-center align-middle lg:mt-36 my-24 lg:px-36 md:px-24 px-8"'>
+    <div id="contact" className='w-full flex flex-col justify-center align-middle lg:mt-36 my-24 lg:px-36 md:px-24 px-8"'>
       <div className="grid max-lg:grid-cols-1 grid-cols-2 w-full gap-4 bg-accent rounded-md p-12">
         <div className="flex flex-col p-2">
           <h1 className="lg:text-5xl text-4xl font-extrabold">Get In Touch</h1>

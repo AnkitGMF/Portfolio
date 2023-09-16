@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Nav from "@/components/created/Nav";
 import Home from "@/components/created/Home";
@@ -10,15 +10,15 @@ import { useTheme } from "next-themes";
 
 export default function App() {
   const { setTheme } = useTheme();
-  setTheme("light");
+  setTheme("dark");
   return (
     <main>
       <Nav />
-      <Home/>
-      <Experience/>
-      <Project/>
-      <Contact/>
-      <Footer/>
+      <Home />
+      <Experience />
+      <Project />
+      <Contact />
+      <Footer />
     </main>
   );
 }

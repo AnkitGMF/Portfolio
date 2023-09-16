@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const Project = () => {
   return (
-    <div className="w-full flex flex-col justify-center align-middle lg:mt-36 mt-24 lg:px-36 md:px-24 px-8 my-12">
+    <div id="projects" className="w-full flex flex-col justify-center align-middle lg:mt-36 mt-24 lg:px-36 md:px-24 px-8 my-12">
       <div>
         <h1 className="text-4xl lg:text-5xl font-extrabold border-b-4 border-code inline p-4">
           Projects

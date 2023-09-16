@@ -66,6 +66,14 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        openmenu: {
+            '0%': {top:'-224px'},
+            '100%': {top:'0px'}
+        },
+        closemenu: {
+          '0%': {top:'0px'},
+          '100%': {top:'-224px'}
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

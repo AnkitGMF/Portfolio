@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-primary text-secondary py-8 lg:px-36 md:px-24 px-8 flex justify-between align-middle">
+    <div id='footer' className="w-full bg-primary text-secondary py-8 lg:px-36 md:px-24 px-8 flex justify-between align-middle">
       <div className="w-[40%]">
         <h3 className="text-lg font-bold">Ankit Khurana</h3>
         <p className="mb-4 text-sm">
