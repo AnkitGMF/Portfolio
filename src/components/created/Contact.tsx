@@ -1,10 +1,33 @@
-import Link from "next/link";
+'use client'
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "../ui/button";
+import { useState } from "react";
 
 const Contact = () => {
+  const [messageInfo, setMessageInfo] = useState({
+    email:'',
+    name:'',
+    message:''
+  })
+
+  const handleSubmit = async()=>{
+    if(messageInfo.email.trim().length>0&&messageInfo.name.trim().length>0&&messageInfo.message.trim().length>0){
+      try {
+        const res = await fetch('/api/contact',{
+          method:'POST',
+          body:JSON.stringify(messageInfo)
+        })
+        
+        setMessageInfo({email:'',name:'',message:''});
+        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
+
   return (
     <div id="contact" className='w-full flex flex-col justify-center align-middle lg:mt-36 my-24 lg:px-36 md:px-24 px-8"'>
       <div className="grid max-lg:grid-cols-1 grid-cols-2 w-full gap-4 bg-accent rounded-md p-12">
@@ -29,17 +52,17 @@ const Contact = () => {
         <div className="rounded-md bg-popover text-popover-foreground p-4">
           <div className="mt-6">
             <Label htmlFor="email">Email</Label>
-            <Input type="email" id="email" placeholder="john@gmail.com" />
+            <Input value={messageInfo.email} onChange={(e)=>{setMessageInfo({...messageInfo,email:e.target.value})}} type="email" id="email" placeholder="john@gmail.com" />
           </div>
           <div className="mt-6">
             <Label htmlFor="name">Name</Label>
-            <Input type="text" id="email" placeholder="John Doe" />
+            <Input value={messageInfo.name} onChange={(e)=>{setMessageInfo({...messageInfo,name:e.target.value})}} type="text" id="email" placeholder="John Doe" />
           </div>
           <div className="mt-6">
             <Label>Message</Label>
-            <Textarea placeholder="Say something..." className="resize-none" />
+            <Textarea value={messageInfo.message} onChange={(e)=>{setMessageInfo({...messageInfo,message:e.target.value})}} placeholder="Say something..." className="resize-none" />
           </div>
-          <Button className="mt-4">Send Message</Button>
+          <Button onClick={handleSubmit} className="mt-4">Send Message</Button>
         </div>
       </div>
     </div>

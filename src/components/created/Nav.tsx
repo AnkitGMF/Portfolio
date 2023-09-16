@@ -27,7 +27,7 @@ const Nav = () => {
     >
       <div className="flex w-full justify-between">
         <div className="py-2">
-          <h4 className="text-xl font-bold">
+          <h4 className="text-xl font-bold cursor-pointer">
             <span className="text-code">Ankit</span> Khurana
           </h4>
         </div>
@@ -64,7 +64,9 @@ const Nav = () => {
                   );
                 })}
               </ul>
-              <Button className="w-full mt-2">Resume</Button>
+              <Link href="/Ankit_Khurana_NSUT_Resume.pdf">
+                <Button className="w-full mt-2">Resume</Button>
+              </Link>
             </div>
             <div>
               <svg
@@ -102,12 +104,14 @@ const Nav = () => {
               })}
               <NavigationMenuItem>
                 <NavigationMenuLink>
-                  <Button
-                    variant="outline"
-                    className="text-code border-code ml-1"
-                  >
-                    Resume
-                  </Button>
+                  <Link href="/Ankit_Khurana_NSUT_Resume.pdf">
+                    <Button
+                      variant="outline"
+                      className="text-code border-code ml-1"
+                    >
+                      Resume
+                    </Button>
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>

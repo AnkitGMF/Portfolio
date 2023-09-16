@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "../ui/button";
 import TypeIt from "typeit-react";
@@ -19,12 +19,12 @@ const Home = () => {
             I am a{" "}
             <span className="bg-accent px-2 m-1 rounded-lg">Developer.</span>
           </h1>
-          <p className="text-muted-foreground mt-8 lg:mt-4">
-            {about}
-          </p>
-          <Button className=" mt-24 lg:block hidden rounded-full">
-            Check Out My Projects
-          </Button>
+          <p className="text-muted-foreground mt-8 lg:mt-4">{about}</p>
+          <Link href="#projects">
+            <Button className=" mt-24 lg:block hidden rounded-full">
+              Check Out My Projects
+            </Button>
+          </Link>
         </div>
         <div className="w-full flex justify-center mt-12 lg:mt-0">
           <Avatar className="w-52 h-52 lg:w-80 lg:h-80 md:w-64 md:h-64">
