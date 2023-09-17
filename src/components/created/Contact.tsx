@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import { useState } from "react";
 import validateAndSanitizeContactForm from "@/utils/validator";
 import Link from "next/link";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [messageInfo, setMessageInfo] = useState({
@@ -18,15 +19,25 @@ const Contact = () => {
     name: "",
     message: "",
   });
+  const [succesfullySent, setSetsuccesfullySent] = useState(false);
   const handleSubmit = async () => {
     const { sanitizedData, errors, isValid } =
       validateAndSanitizeContactForm(messageInfo);
     if (isValid) {
       try {
+        setSetsuccesfullySent(undefined)
+        const emailRes = await emailjs.send('service_cfk7h2i', 'template_uywpbfy', sanitizedData, 'iJER-AqsZNOdbhibo');
         const res = await fetch("/api/contact", {
           method: "POST",
           body: JSON.stringify(sanitizedData),
         });
+        const serverRes = await res.json()
+        if(emailRes.status==200&&serverRes.success){
+          setSetsuccesfullySent(true)
+        }
+        else{
+          setSetsuccesfullySent(false)
+        }
 
         setMessageInfo({ email: "", name: "", message: "" });
         setErrorMessage({ email: "", name: "", message: "" });
@@ -144,9 +155,12 @@ const Contact = () => {
               className="resize-none"
             />
           </div>
-          <Button onClick={handleSubmit} className="mt-4">
+          <Button disabled={succesfullySent==undefined} onClick={handleSubmit} className="mt-4">
             Send Message
           </Button>
+          <div className={succesfullySent===true?`mt-1 text-xs text-green-500`:'hidden'}>
+            <p>Message was sent Successfully</p>
+          </div>
         </div>
       </div>
     </div>
