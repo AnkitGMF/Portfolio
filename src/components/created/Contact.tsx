@@ -26,6 +26,7 @@ const Contact = () => {
           method: "POST",
           body: JSON.stringify(sanitizedData),
         });
+      
 
         setMessageInfo({ email: "", name: "", message: "" });
         setErrorMessage({ email: "", name: "", message: "" });

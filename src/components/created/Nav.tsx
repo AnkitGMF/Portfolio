@@ -12,6 +12,7 @@ import { Button } from "../ui/button";
 import { navLinks } from "@/constants";
 import Link from "next/link";
 import CustomSheet from "./CustomSheet";
+import ThemeSwitcher from "./ThemeSwitcher";
 import { useState } from "react";
 
 const Nav = () => {
@@ -32,10 +33,10 @@ const Nav = () => {
           </h4>
         </div>
 
-        <div className="lg:hidden">
+        <div className="lg:hidden py-2">
           <svg
-            width="30"
-            height="30"
+            width="32"
+            height="32"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
@@ -45,6 +46,7 @@ const Nav = () => {
             <path d="M0 0h24v24H0z" fill="none"></path>
             <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
           </svg>
+          
         </div>
 
         <CustomSheet open={menuOpen}>
@@ -64,15 +66,18 @@ const Nav = () => {
                   );
                 })}
               </ul>
+              <div className="flex mt-2">
               <Link href="/Ankit_Khurana_NSUT_Resume.pdf">
-                <Button className="w-full mt-2">Resume</Button>
+                <Button className="w-full">Resume</Button>
               </Link>
+              <ThemeSwitcher/>
+              </div>
             </div>
             <div>
               <svg
                 onClick={handleClick}
-                width="24"
-                height="24"
+                width="32"
+                height="32"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -112,6 +117,11 @@ const Nav = () => {
                       Resume
                     </Button>
                   </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink>
+                  <ThemeSwitcher/>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
