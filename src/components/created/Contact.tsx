@@ -19,7 +19,7 @@ const Contact = () => {
     name: "",
     message: "",
   });
-  const [succesfullySent, setSetsuccesfullySent] = useState(false);
+  const [succesfullySent, setSetsuccesfullySent]:any = useState(false);
   const handleSubmit = async () => {
     const { sanitizedData, errors, isValid } =
       validateAndSanitizeContactForm(messageInfo);
