@@ -10,7 +10,7 @@ import { useTheme } from "next-themes";
 
 export default function App() {
   const { setTheme } = useTheme();
-  setTheme("light");
+  setTheme("dark");
   return (
     <main>
       <Nav />
