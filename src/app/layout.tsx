@@ -15,17 +15,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='scroll-smooth' style={{scrollBehavior:'smooth'}}>
-      <Script strategy='lazyOnload' src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}/>
-      <Script strategy='lazyOnload' id='analytics'>
-      {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-                    page_path: window.location.pathname,
-                    });
-                `}
-      </Script>
+      
+<Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}></Script>
+<Script id='analytics'>
+  {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', ${JSON.stringify(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS)});`}
+</Script>
       <body>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
