@@ -34,6 +34,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex justify-center mt-12 lg:mt-24 xl:mt-30">
+        <Link href='#experience'>
         <svg
           className="animate-bounce max-lg:hidden block"
           width="50"
@@ -43,14 +44,15 @@ const Home = () => {
           viewBox="0 0 24 24"
           stroke="currentColor"
           color="text-primary"
-        >
+          >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
             d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          ></path>
+            ></path>
         </svg>
+            </Link>
       </div>
     </div>
   );

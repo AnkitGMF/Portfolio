@@ -24,21 +24,21 @@ export const projects = [
         title:'Chat App',
         description:'Full Stack Software Development',
         content: 'Developed a chat app with custom REST endpoints built over node.js using express.',
-        used: 'Node.js, express, JavaScript, Svelte, HTML / CSS, uuid, cookie-parser',
+        used: ['Node.js', 'express', 'JavaScript', 'Svelte', 'HTML / CSS', 'uuid', 'cookie-parser'],
         github: 'https://github.com/AnkitGMF/chatApp'
     },
     {
         title:'DankFootball Website',
         description:'Full Stack Software Development',
         content: 'Collaborated on a responsive football website. Designed and implemented microservices responsible for fetching and aggregating data.',
-        used: 'Node.js, express, JavaScript, React, Passport.js',
+        used: ['Node.js', 'express', 'JavaScript', 'React', 'Passport.js'],
         github: 'https://github.com/aditya-mehrotra/DankFootball'
     },
     {
         title:'Playing Cards Classification',
         description:'Machine Learning',
         content: 'Developed a Convolution Neural Network to classify images of playing cards. Performed hyperparameter tuning to achieve the best model. Achieved an accuracy of 87.9%',
-        used: 'Python, TensorFlow, Scikit-Learn, Numpy, Matplotlib',
+        used: ['Python', 'TensorFlow', 'Scikit-Learn', 'Numpy', 'Matplotlib'],
         github: 'https://colab.research.google.com/drive/1_F-2sPAzgGTKh_iDBjLMcsQNcU8BDeJs?usp=sharing'
     }
 ]

@@ -7,12 +7,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { projects } from "@/constants";
 import Link from "next/link";
 
 const Project = () => {
   return (
-    <div id="projects" className="w-full flex flex-col justify-center align-middle lg:mt-36 mt-24 lg:px-36 md:px-24 px-8 my-6 py-6">
+    <div
+      id="projects"
+      className="w-full flex flex-col justify-center align-middle lg:mt-36 mt-24 lg:px-36 md:px-24 px-8 my-6 py-6"
+    >
       <div>
         <h1 className="text-4xl lg:text-5xl font-extrabold border-b-4 border-code inline p-4">
           Projects
@@ -31,12 +35,23 @@ const Project = () => {
                   <p>{project.content}</p>
                   <br />
                   <p className="text-muted-foreground text-sm">
-                    <span >Techonologies Used: </span>
-                    {project.used}
+                    {project.used.map((tech) => {
+                      return (
+                        <>
+                          <Badge className="m-1 text-code bg-accent">
+                            {tech}
+                          </Badge>
+                        </>
+                      );
+                    })}
                   </p>
                 </CardContent>
                 <CardFooter>
-                  <Link href={project.github} target="_blank" className="text-blue-500 hover:underline text-sm">
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    className="text-blue-500 hover:underline text-sm"
+                  >
                     Project Link - GitHub/Google Colab
                   </Link>
                 </CardFooter>
