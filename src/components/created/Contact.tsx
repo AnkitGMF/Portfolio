@@ -26,19 +26,6 @@ const Contact = () => {
     if (isValid) {
       try {
         setSetsuccesfullySent(undefined)
-        const emailRes = await emailjs.send('service_cfk7h2i', 'template_uywpbfy', sanitizedData, 'iJER-AqsZNOdbhibo');
-        const res = await fetch("/api/contact", {
-          method: "POST",
-          body: JSON.stringify(sanitizedData),
-        });
-        const serverRes = await res.json()
-        if(emailRes.status==200&&serverRes.success){
-          setSetsuccesfullySent(true)
-        }
-        else{
-          setSetsuccesfullySent(false)
-        }
-
         setMessageInfo({ email: "", name: "", message: "" });
         setErrorMessage({ email: "", name: "", message: "" });
       } catch (error) {
